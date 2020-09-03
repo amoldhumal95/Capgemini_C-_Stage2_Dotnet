@@ -1,0 +1,45 @@
+Coding C#: Loops - 2
+
+
+using System;
+
+namespace LearnCsharp
+{
+	class Sumofprimenumbers{
+	    public static void Main(string[] args) {
+        int n1 = Convert.ToInt32(Console.ReadLine());
+        int n2 = Convert.ToInt32(Console.ReadLine());
+        int sum=0;
+        int i = 0 ,j = 0 ;
+        int flag = 0 ;
+//student code goes here---->
+        if(n1 > n2){
+            Console.Write("INVALID_INPUT") ;
+        }
+        else if(n1 < 3 || n2 < 3 || n1 > 1000 || n2 > 1000){
+            Console.Write("INVALID_INPUT") ;
+        }
+        else{
+            for(j = n1 ; j <= n2 ; j++){
+                for(i = 2 ; i < ( j / 2 ) ; i++){
+                    if( j % i == 0){
+                        flag = 1;
+                        break;
+                    }
+                }
+                if( flag == 0 ){
+                    sum = sum + j ;
+                }
+                flag = 0;
+            }
+
+           Console.Write(sum);
+
+          }
+	    }
+	}
+}
+
+
+
+
