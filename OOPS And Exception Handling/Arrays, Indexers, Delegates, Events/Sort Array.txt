@@ -1,0 +1,45 @@
+using System;
+
+namespace LearnCsharp
+{
+
+	class ArraySorting
+	{
+	    public static void Main(string[] args)
+	    {
+		
+			//Update the code below
+            int?[] iArray; 
+            int n = 7;
+            iArray = new int?[n];
+            int iTemp = 0;
+            string sSortType = Console.ReadLine();
+            char[] sSort = sSortType.ToCharArray();
+            string sSortingType = "";
+            string str;
+			while((str = Console.ReadLine())!=null){
+			    iArray[iTemp] = Convert.ToInt32(str);
+			    iTemp++;
+			}
+			
+//Write your code to sort an array here
+            if(sSort[0] == 'A' || sSort[0] == 'a'){
+                Array.Sort(iArray);
+                sSortingType = "Ascending";
+                Console.WriteLine("After {0} Sorting", sSortingType);
+                for(int i = n-iTemp;i<n;i++)
+                    Console.Write(iArray[i]+" ");
+            }
+		    else if (sSort[0] == 'D' || sSort[0] == 'd'){
+		        sSortingType = "Descending";
+		        Array.Sort(iArray);
+		        Array.Reverse(iArray);
+		        Console.WriteLine("After {0} Sorting", sSortingType);
+		        for(int i =0;i<iTemp;i++)
+		            Console.Write(iArray[i]+" ");
+		    }
+        }
+
+	}
+
+}
