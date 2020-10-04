@@ -201,26 +201,26 @@ foreach(Customer cst in custlist)
 	}
 
 	public Dictionary<string,float> GetToysByPrice(int x, int y)
-		 {
+		    {
 		//Write your code here 
-			Dictionary<string,float> gtp = new Dictionary<string,float>();
-			foreach(Toy t in toylist){
-			    if(t.Price<y && t.Price>x){
-				gtp.Add(t.Tname,t.Price);
-			    }
+		Dictionary<string,float> gtp = new Dictionary<string,float>();
+                foreach(Toy t in toylist){
+                    if(t.Price<y && t.Price>x){
+                        gtp.Add(t.Tname,t.Price);
+                    }
+                }
+                return gtp;
 			}
-                	return gtp;
-		}
 			
 	public void CountCustomersByCountry()
 	{
-        //Write your code her
-		var result = custlist.GroupBy(x=> x.Country);
-		foreach(var group in result)
-		{
-		    Console.WriteLine("Country name " + group.Key + "number of customers " + group.Count());
-		}
+        //Write your ode her
+        var result = custlist.GroupBy(x=> x.Country);
+	foreach(var group in result)
+	{
+	    Console.WriteLine("Country name " + group.Key + "number of customers " + group.Count());
 	}
+}
 			
 			
 }
