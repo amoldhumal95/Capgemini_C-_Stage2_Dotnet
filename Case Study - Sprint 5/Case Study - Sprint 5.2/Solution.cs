@@ -215,8 +215,11 @@ foreach(Customer cst in custlist)
 	public void CountCustomersByCountry()
 	{
         //Write your ode her
-        Console.WriteLine("India: 4");
-        Console.WriteLine("England: 1");
+        var result = custlist.GroupBy(x=> x.Country);
+	foreach(var group in result)
+	{
+	    Console.WriteLine("Country name " + group.Key + "number of customers " + group.Count());
+	}
 }
 			
 			
